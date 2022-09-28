@@ -8,7 +8,7 @@ import pytest
 def test_root(client):
     res = client.get("/")
     print(res.json().get('message'))
-    assert res.json().get('message') == 'Hello World!!!'
+    assert res.json().get('message') == 'Hello Heroku, Successfully deployed from CI/CD pipline!!!'
     assert res.status_code == 200
 
 def test_create_user(client):
