@@ -12,6 +12,9 @@ def subtract(num1: int, num2: int):
 def multiply(num1: int, num2: int):
     return num1 * num2
 
+def qubic(num1: int, num2: int, num3: int):
+    return num1 * num2 * num3
+
 
 def divide(num1: int, num2: int):
     return num1 / num2
