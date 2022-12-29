@@ -15,9 +15,6 @@ def multiply(num1: int, num2: int):
 def qubic(num1: int, num2: int, num3: int):
     return num1 * num2 * num3
 
-def fourply(num1: int, num2: int, num3: int, num4: int):
-    return num1 * num2 * num3 * num4
-
 def divide(num1: int, num2: int):
     return num1 / num2
 
