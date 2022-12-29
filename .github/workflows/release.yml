@@ -8,6 +8,7 @@ jobs:
       steps: 
          - uses: actions/checkout@v3 # Checkout our working repository 
          - name: Conventional Changelog Action
+<<<<<<< HEAD
             id: changelog 
             uses: TriPSs/conventional-changelog-action@v3 
             with: 
@@ -21,3 +22,31 @@ jobs:
                with: tag_name: ${{ steps.changelog.outputs.tag } 
                release_name: ${{ steps.changelog.outputs.tag } 
                body: ${{ steps.changelog.outputs.clean_changelog }
+=======
+
+           id: changelog 
+
+           uses: TriPSs/conventional-changelog-action@v3 
+
+           with: 
+
+             github-token: ${{ secrets.github_token } 
+
+             output-file: "false" 
+
+        - name: Create Release # This action will create the actual release 
+
+          uses: actions/create-release@v1 
+
+          if: ${{ steps.changelog.outputs.skipped == 'false' } 
+
+          env: 
+
+            GITHUB_TOKEN: ${{ secrets.github_token } 
+
+            with: tag_name: ${{ steps.changelog.outputs.tag } 
+
+            release_name: ${{ steps.changelog.outputs.tag } 
+
+            body: ${{ steps.changelog.outputs.clean_changelog }
+>>>>>>> fa77e7b2f862eb6e0870f561eccd1074106cb798
