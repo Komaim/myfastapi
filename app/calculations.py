@@ -35,13 +35,4 @@ class BankAccount():
         self.balance -= amount
 
     def collect_interest(self):
-        self.balance *= 1.1        
-
-
-
-class NewStudent():
-    def __init__(self, student_level=1) -> None:
-        self.level = student_level
-    
-    def passes(self, next_level):
-        self.level += next_level 
+        self.balance *= 1.1
